@@ -1,1 +1,3 @@
-# aso
+# ASO - Alejandro Arayo
+
+Repositorio para subir scripts de bash, powershell...
