@@ -1,10 +1,21 @@
 #!/bin/bash
 
-re="^([1-9][[:digit:]]{0,3}|[1-5][[:digit:]]{4}|6[0-4][[:digit:]]{3}|65[0-4][[:digit:]]{2}|655[0-2][[:digit:]]|6553[0-5])$"
+re="^[0-9][0-9]*$"
 
-if [[ $1 =~ $re ]]; then
-    echo "Puerto $1 valido "
+
+if [[ $# -eq 0 ]]; then	
+	echo "No se ha introducido parametros"		
+	exit 1
+fi	
+
+if [[ ! $1 =~ $re ]]; then
+	echo "$1 no es un número"
+	exit 1
+fi
+
+if [[ $1 -ge 1 ]] && [[ $1 -le 65535 ]]; then
+    echo "$1 puerto valido."
 else
-    echo "Puerto $1 invalido"
+    echo "$1 puerto fuera de rango (1-65535)"
 fi
 

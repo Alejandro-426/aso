@@ -12,5 +12,5 @@ while read -r linea; do
 	fi
 done < $ruta
 
-echo "--------"
+echo "--------------------"
 echo "Numeros de usuarios: $contador"

@@ -18,9 +18,11 @@ do
 	
 	if [[ ! $linea =~ $re ]]; then
 		((contador_lineas_validas++))	
+		echo $linea
 	fi
+
 done < $fichero
 
-
+echo "-------------"
 echo "Líneas totales: $(cat "$fichero" | wc -l)"
 echo "Líneas utiles: $contador_lineas_validas"
